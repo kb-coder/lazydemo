@@ -1,18 +1,42 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="row">
+      <button @click="toggleDogs">Toggle Dogs</button>
+    </div>
+    <bella-profile
+      v-if="showBella"
+    />
+    <daisy-profile
+      v-if="showDaisy"
+    />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import BellaProfile from '@/components/bella'
+import DaisyProfile from '@/components/daisy'
+// const DaisyProfile = () => import(/* webpackChunkName: 'dogs' */ '@/components/daisy')
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    BellaProfile,
+    DaisyProfile
+  },
+  data () {
+    return {
+      showBella: true
+    }
+  },
+  computed: {
+    showDaisy () {
+      return !this.showBella
+    }
+  },
+  methods: {
+    toggleDogs () {
+      this.showBella = !this.showBella
+    }
   }
 }
 </script>

@@ -2,12 +2,29 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <router-link to="/bella-bella">Bella</router-link>|
+      <router-link to="/daisy-mae">Daisy Mae</router-link>|
       <router-link to="/about">About</router-link>
+    </div>
+    <div>
+      {{ today }}
     </div>
     <router-view/>
   </div>
 </template>
+<script>
+import '@/assets/styles.less'
+import moment from 'moment'
 
+export default {
+  name: 'App',
+  data () {
+    return {
+      today: `Today is: ${moment.utc().local().format('MM/DD/YYYY HH:mm:ss')}`
+    }
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

@@ -3,23 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "analyze": "vue-cli-service build --report",
+    "serve": "vue-cli-service serve --open --modern --port 44322",
+    "build": "vue-cli-service build --modern --mode production",
+    "lint": "vue-cli-service lint",
+    "dev-build": "vue-cli-service build --mode development",
+    "dev": "npm run dev-build && npm run serve"
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "moment": "2.24.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "7.8.3",
+    "@babel/runtime-corejs3": "7.8.4",
     "@vue/cli-plugin-babel": "~4.2.0",
     "@vue/cli-plugin-eslint": "~4.2.0",
     "@vue/cli-plugin-router": "~4.2.0",
     "@vue/cli-service": "~4.2.0",
+    "@vue/preload-webpack-plugin": "1.1.1",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
+    "less": "3.11.1",
+    "less-loader": "5.0.0",
+    "moment-locales-webpack-plugin": "1.1.2",
     "vue-template-compiler": "^2.6.11"
   }
 }
