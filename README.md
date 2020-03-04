@@ -2,7 +2,8 @@
 This is a simple demo showing how to:
 1. Lazy Load Components in Vue 2
 2. Lazy Load Routes in Vue 2
-Bonus: vue.config.js shows how to split out vendor's chunk
+
+**Bonus:** vue.config.js shows how to split out vendor's chunk
 
 ## Lazy Load Components
 In the /views/home.vue component, Bella is shown by default so we can lazy load the Daisy component since it's not visible on the initial page load.
