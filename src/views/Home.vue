@@ -14,8 +14,8 @@
 
 <script>
 import BellaProfile from '@/components/bella'
-import DaisyProfile from '@/components/daisy'
-// const DaisyProfile = () => import(/* webpackChunkName: 'dogs' */ '@/components/daisy')
+// import DaisyProfile from '@/components/daisy'
+const DaisyProfile = () => import(/* webpackChunkName: 'dogs' */ '@/components/daisy')
 
 export default {
   name: 'Home',

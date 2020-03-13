@@ -39,6 +39,7 @@ module.exports = {
           rel: 'preload',
           include: 'initial',
           fileWhitelist: [
+            /(^@vue)(.*)(\.js$)/,
             /(^vue)(.*)(\.js$)/
           ],
           // do not preload map files or hot update files
@@ -54,7 +55,7 @@ module.exports = {
         cacheGroups: {
           // Vue modules
           vue: {
-            test: /[\\/]node_modules[\\/]vue.*[\\/]/,
+            test: /[\\/]node_modules[\\/](@vue.*|vue.*)[\\/]/,
             name: 'vue',
             enforce: true,
             priority: 20,
@@ -68,8 +69,9 @@ module.exports = {
               // Note the usage of `path.sep` instead of / or \, for cross-platform compatibility.
               const path = require('path')
               return module.resource &&
-                !module.resource.includes(`${path.sep}node_modules${path.sep}vue`) &&
-                !module.resource.includes(`${path.sep}src${path.sep}`)
+              !module.resource.includes(`${path.sep}node_modules${path.sep}@vue`) &&
+              !module.resource.includes(`${path.sep}node_modules${path.sep}vue`) &&
+              !module.resource.includes(`${path.sep}src${path.sep}`)
             },
             maxSize: 500000,
             priority: 10,
@@ -87,8 +89,8 @@ module.exports = {
         }
       })
 
-      // Webpack includes a small piece of runtime code that gets inserted into the last bundle created. This could cause our vendor
-      // bundle to change unnecessarily. So the next line causes this runtime to be put in a separate file.
+      // Webpack includes a small piece of runtime code that gets inserted into the last chunk created. This could cause our vendor
+      // chunk to change unnecessarily. So the next line causes this runtime to be put in a separate file.
       config.optimization.set('runtimeChunk', true)
     }
 
