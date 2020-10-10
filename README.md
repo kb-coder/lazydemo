@@ -1,4 +1,6 @@
 # lazydemo
+Watch the full presentation on [Vue Mastery](https://www.vuemastery.com/conferences/vueconf-us-2020/the-lazy-way-to-better-performance/).
+
 This is a simple demo showing how to:
 1. Lazy Load Components in Vue 2
 2. Lazy Load Routes in Vue 2
