@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "analyze": "vue-cli-service build --report",
-    "serve": "vue-cli-service serve --open --modern --port 44322",
+    "serve": "vue-cli-service serve --open --modern --port 44321",
     "build": "vue-cli-service build --modern --mode production",
     "lint": "vue-cli-service lint",
     "dev-build": "vue-cli-service build --mode development",
-    "dev": "npm run dev-build && npm run serve"
+    "dev": "npm run dev-build && npm run serve",
+    "start": "npm run dev"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -17,10 +18,10 @@
     "vue-router": "^3.1.5"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "7.8.3",
-    "@babel/runtime-corejs3": "7.8.4",
-    "@vue/cli-plugin-babel": "~4.2.0",
-    "@vue/cli-plugin-eslint": "~4.2.0",
+    "@babel/plugin-transform-runtime": "^7.12.17",
+    "@babel/runtime-corejs3": "^7.8.4",
+    "@vue/cli-plugin-babel": "^4.5.11",
+    "@vue/cli-plugin-eslint": "^4.5.11",
     "@vue/cli-plugin-router": "~4.2.0",
     "@vue/cli-service": "~4.2.0",
     "@vue/preload-webpack-plugin": "1.1.1",
